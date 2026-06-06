@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechHub - Your Digital Portfolio</title>
+    <meta name="description" content="A comprehensive web application showcasing modern web development skills">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="data:font/woff2;base64,..." as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="web.css">
+  <script src="web.js"></script>
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">TechHub</a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌓</button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Welcome to TechHub</h1>
+                <p>A comprehensive web application showcasing modern development practices, performance optimization, and responsive design.</p>
+                <div class="cta-buttons">
+                    <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section" id="features">
+            <h2 class="section-title fade-in">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Performance Optimized</h3>
+                    <p>Lazy loading, minified assets, optimized images, and efficient code structure ensure lightning-fast load times across all devices.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Responsive</h3>
+                    <p>Fully responsive design that works seamlessly on desktop, tablet, and mobile devices with touch-friendly interactions.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Modern Design</h3>
+                    <p>Contemporary UI with smooth animations, glassmorphism effects, and dark/light theme support for enhanced user experience.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Cross-Browser Compatible</h3>
+                    <p>Tested and optimized for Chrome, Firefox, Safari, and Edge browsers with fallbacks for older versions.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">♿</div>
+                    <h3>Accessibility First</h3>
+                    <p>Built with accessibility in mind, including keyboard navigation, screen reader support, and semantic HTML structure.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure & Reliable</h3>
+                    <p>Implements security best practices with form validation, sanitized inputs, and secure coding standards.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="99">0</span>
+                    <span class="stat-label">Performance Score</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-label">Mobile Friendly</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Browsers Supported</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="24">0</span>
+                    <span class="stat-label">Technologies Used</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="section" id="portfolio">
+            <h2 class="section-title fade-in">Portfolio Showcase</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%234c8f7a'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='18' font-family='Arial'%3EE-Commerce Platform%3C/text%3E%3C/svg%3E" alt="E-Commerce Platform" class="portfolio-img lazy-load">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h3>E-Commerce Platform</h3>
+                            <p>Full-stack shopping platform with cart functionality</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23ff6b6b'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='18' font-family='Arial'%3ETask Management%3C/text%3E%3C/svg%3E" alt="Task Management App" class="portfolio-img lazy-load">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h3>Task Management App</h3>
+                            <p>Productivity app with drag-and-drop functionality</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%232c5f50'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='18' font-family='Arial'%3EWeather Dashboard%3C/text%3E%3C/svg%3E" alt="Weather Dashboard" class="portfolio-img lazy-load">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h3>Weather Dashboard</h3>
+                            <p>Real-time weather app with geolocation support</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23ff8e8e'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='18' font-family='Arial'%3EBlog Platform%3C/text%3E%3C/svg%3E" alt="Blog Platform" class="portfolio-img lazy-load">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h3>Blog Platform</h3>
+                            <p>Content management system with rich text editor</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%236a4c93'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='18' font-family='Arial'%3EData Visualization%3C/text%3E%3C/svg%3E" alt="Data Visualization" class="portfolio-img lazy-load">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h3>Data Visualization</h3>
+                            <p>Interactive charts and analytics dashboard</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23ffa500'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='18' font-family='Arial'%3EPortfolio Website%3C/text%3E%3C/svg%3E" alt="Portfolio Website" class="portfolio-img lazy-load">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-content">
+                            <h3>Portfolio Website</h3>
+                            <p>Responsive portfolio with modern animations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <h2 class="section-title fade-in">Get In Touch</h2>
+            <form class="contact-form fade-in" id="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="#" class="social-link" aria-label="GitHub">
+                <span></span>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+                <span></span>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+                <span></span>
+            </a>
+            <a href="#" class="social-link" aria-label="Email">
+                <span></span>
+            </a>
+        </div>
+        
+        <p>&copy; 2025 TechHub. Built with modern web technologies for optimal performance and accessibility.</p>
+    </footer>
+
+  
+</body>
+</html>

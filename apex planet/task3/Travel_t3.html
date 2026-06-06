@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌍 Travel Explorer</title>
+  <style></style>
+</head>
+<body>
+  <header>
+    <h1>🌍 Travel Explorer</h1>
+    <p>Discover the world with fun facts, quizzes & inspiration</p>
+  </header>
+  <link rel="stylesheet" href="travel.css">
+  <script src="travel.js"></script>
+
+
+  <!-- Carousel -->
+  <section class="carousel">
+    <div class="slides" id="slides">
+      <div class="slide" style="background-image: linear-gradient(rgba(13, 12, 12, 0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80')">
+        <div class="slide-content">
+          <h3>🗼 Paris, France</h3>
+          <p>The City of Light awaits with its romantic charm and iconic landmarks</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+        <div class="slide-content">
+          <h3>🏙️ New York City, USA</h3>
+          <p>The city that never sleeps, where dreams come to life</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2088&q=80')">
+        <div class="slide-content">
+          <h3>🏮 Tokyo, Japan</h3>
+          <p>Where ancient traditions meet cutting-edge technology</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+        <div class="slide-content">
+          <h3>🏺 Cairo, Egypt</h3>
+          <p>Discover the mysteries of ancient pharaohs and pyramids</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1555993539-1732b0258077?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+        <div class="slide-content">
+          <h3>🏛️ Santorini, Greece</h3>
+          <p>Experience the beauty of whitewashed villages and azure seas</p>
+        </div>
+      </div>
+    </div>
+    
+    <button class="carousel-arrow prev" onclick="changeSlide(-1)">‹</button>
+    <button class="carousel-arrow next" onclick="changeSlide(1)">›</button>
+    
+    <div class="carousel-nav" id="carousel-nav"></div>
+  </section>
+
+  <!-- Travel Quiz -->
+  <section class="quiz">
+    <h2>🧭 Travel Quiz</h2>
+    <div class="score" id="score">Score: 0/0</div>
+    <p id="quiz-question">Loading question...</p>
+    <div class="options" id="quiz-options"></div>
+    <button id="next-btn" style="display:none" onclick="nextQuestion()">Next Question</button>
+  </section>
+
+  <!-- API Section -->
+  <section class="api-section">
+    <h2>✈️ Get Inspired</h2>
+    <button onclick="fetchQuote()">Show Travel Quote</button>
+    <div class="api-result" id="api-result">Click above to get inspired!</div>
+  </section>
+
+
+</body>
+</html>

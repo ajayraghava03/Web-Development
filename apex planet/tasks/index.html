@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master - Advanced CSS & JavaScript Learning Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-card">
+                <div class="icon-container">
+                    <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5,3 19,12 5,21"></polygon>
+                    </svg>
+                </div>
+                <h1 class="welcome-title">Quiz Master</h1>
+                <p class="welcome-description">
+                    Test your knowledge with trivia questions from various categories. 
+                    Are you ready for the challenge?
+                </p>
+                
+                <!-- Quiz Settings -->
+                <div class="quiz-settings">
+                    <div class="setting-group">
+                        <label for="difficulty">Difficulty:</label>
+                        <select id="difficulty" class="setting-select">
+                            <option value="easy">Easy</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label for="category">Category:</label>
+                        <select id="category" class="setting-select">
+                            <option value="">Any Category</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label for="amount">Questions:</label>
+                        <select id="amount" class="setting-select">
+                            <option value="5">5 Questions</option>
+                            <option value="10" selected>10 Questions</option>
+                            <option value="15">15 Questions</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="start-quiz-btn" class="start-button">
+                    Start Quiz
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="screen">
+            <div class="loading-container">
+                <div class="spinner">
+                    <div class="spinner-inner"></div>
+                </div>
+                <p class="loading-text">Loading awesome trivia questions...</p>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-container">
+                <!-- Quiz Header -->
+                <div class="quiz-header">
+                    <h1 class="quiz-title">Quiz Master</h1>
+                    <div class="score-display">
+                        Score: <span id="current-score">0</span> / <span id="total-questions">10</span>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-info">
+                        <span id="question-counter">Question 1 of 10</span>
+                        <span id="difficulty-display">Medium</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <!-- Question Card -->
+                <div id="question-card" class="question-card">
+                    <div class="category-badge">
+                        <span id="question-category">General Knowledge</span>
+                    </div>
+                    
+                    <h2 id="question-text" class="question-text">
+                        Loading question...
+                    </h2>
+                    
+                    <div id="answers-container" class="answers-container">
+                        <!-- Answer buttons will be generated dynamically -->
+                    </div>
+
+                    <!-- Result explanation -->
+                    <div id="result-explanation" class="result-explanation hidden">
+                        <p id="correct-answer-text"></p>
+                        <p id="user-answer-text"></p>
+                    </div>
+                </div>
+
+                <!-- Next Button -->
+                <div class="next-button-container">
+                    <button id="next-question-btn" class="next-button hidden">
+                        <svg class="next-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                        <span id="next-button-text">Next Question</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="results-container">
+                <div class="results-card">
+                    <!-- Trophy Icon -->
+                    <div class="trophy-container">
+                        <svg class="trophy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                            <path d="M4 22h16"></path>
+                            <path d="M10 14.66V17c0 .55.47.98.97 1.21C11.56 18.75 12.23 19 13 19c.77 0 1.44-.25 2.03-.79.5-.23.97-.66.97-1.21v-2.34"></path>
+                            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                        </svg>
+                    </div>
+                    
+                    <h2 class="results-title">Quiz Complete!</h2>
+                    <p class="results-subtitle">Here's how you performed</p>
+
+                    <!-- Score Circle -->
+                    <div class="score-circle-container">
+                        <svg class="score-circle" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#e5e7eb" stroke-width="8" fill="none"></circle>
+                            <circle id="score-progress" cx="50" cy="50" r="40" stroke="url(#gradient)" stroke-width="8" fill="none" stroke-dasharray="0 251" stroke-linecap="round"></circle>
+                            <defs>
+                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#3B82F6"></stop>
+                                    <stop offset="100%" stop-color="#8B5CF6"></stop>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="score-text">
+                            <div id="percentage-score" class="percentage">0%</div>
+                            <div id="fraction-score" class="fraction">0/10</div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Message -->
+                    <div id="performance-message" class="performance-message">
+                        Great job! Keep practicing!
+                    </div>
+
+                    <!-- Statistics Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                            <div id="correct-count" class="stat-number">0</div>
+                            <div class="stat-label">Correct</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon-square error"></div>
+                            <div id="incorrect-count" class="stat-number">0</div>
+                            <div class="stat-label">Incorrect</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon-square warning"></div>
+                            <div id="difficulty-stat" class="stat-number">Medium</div>
+                            <div class="stat-label">Difficulty</div>
+                        </div>
+                    </div>
+
+                    <!-- Restart Button -->
+                    <button id="restart-quiz-btn" class="restart-button">
+                        <svg class="restart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+                            <path d="M21 3v5h-5"></path>
+                            <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+                            <path d="M3 21v-5h5"></path>
+                        </svg>
+                        Try Again
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

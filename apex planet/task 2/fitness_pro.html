@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitTracker - Your Gym Companion</title>
+  <link rel="stylesheet" href="fit.css">
+  <script src="fit.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>💪 FitTracker Pro</h1>
+    <nav>
+      <a href="#membership">🏋️ Membership</a>
+      <a href="#workouts">💪 Workouts</a>
+      <a href="#classes">🔥 Classes</a>
+      <a href="#nutrition">🥗 Nutrition</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Gym Membership Form Section -->
+    <section id="membership">
+      <h2>Join Our Gym Today!</h2>
+      <form id="membershipForm">
+        <label>
+          Full Name:
+          <input type="text" id="memberName" name="memberName" required placeholder="Enter your full name">
+        </label>
+        <label>
+          Email Address:
+          <input type="email" id="memberEmail" name="memberEmail" required placeholder="your.email@example.com">
+        </label>
+        <label>
+          Phone Number:
+          <input type="tel" id="memberPhone" name="memberPhone" required placeholder="91+">
+        </label>
+        <label>
+          Membership Type:
+          <select id="membershipType" name="membershipType" required>
+            <option value="">Select a membership plan</option>
+            <option value="basic">Basic - 4k/month</option>
+            <option value="premium">Premium - 10k/month</option>
+            <option value="vip">VIP - 25k/month</option>
+          </select>
+        </label>
+        <label>
+          Fitness Goals:
+          <textarea id="fitnessGoals" name="fitnessGoals" required placeholder="Tell us about your fitness goals and what you want to achieve..."></textarea>
+        </label>
+        <button type="submit">Start My Fitness Journey</button>
+      </form>
+      <div id="gymFormMsg"></div>
+    </section>
+
+    <!-- Exercise Gallery Section -->
+    <section id="workouts">
+      <h2>Exercise Gallery</h2>
+      <div class="exercise-input">
+        <div class="input-group">
+          <label for="exerciseName">Exercise Name</label>
+          <input type="text" id="exerciseName" placeholder="e.g., Push-ups, Squats..." maxlength="50">
+        </div>
+        <div class="input-group">
+          <label for="exerciseImage">Upload Image </label>
+          <input type="file" id="exerciseImage" accept="image/*">
+        </div>
+        <button id="addExerciseBtn">🏋️ Add to Gallery</button>
+        <div class="image-preview" id="imagePreview">
+          <img class="preview-image" id="previewImage" alt="Preview">
+          <div class="preview-filename" id="previewFilename"></div>
+        </div>
+      </div>
+      <div id="exerciseGallery">
+        <div class="gallery-empty">
+          🎯 Build your exercise!.
+        </div>
+      </div>
+    </section>
+    <!-- Fitness Classes Section -->
+    <section id="classes">
+      <h2>Group Classes</h2>
+      <div style="display: grid; gap: 15px;">
+        <div class="class-card" style="background: linear-gradient(45deg, #ff6b35, #f7931e); color: white; padding: 20px; border-radius: 15px; text-align: center; transition: transform 0.3s ease; cursor: pointer;">
+          <h3 style="font-family: 'Orbitron', monospace; margin-bottom: 10px;">🔥 HIIT Training</h3>
+          <p>High-Intensity Interval Training</p>
+          <small>Mon, Wed, Fri - 6:00 AM</small>
+        </div>
+        <div class="class-card" style="background: linear-gradient(45deg, #2ecc71, #27ae60); color: white; padding: 20px; border-radius: 15px; text-align: center; transition: transform 0.3s ease; cursor: pointer;">
+          <h3 style="font-family: 'Orbitron', monospace; margin-bottom: 10px;">🧘 Yoga Flow</h3>
+          <p>Mind & Body Connection</p>
+          <small>Tue, Thu - 7:00 AM</small>
+        </div>
+        <div class="class-card" style="background: linear-gradient(45deg, #9b59b6, #8e44ad); color: white; padding: 20px; border-radius: 15px; text-align: center; transition: transform 0.3s ease; cursor: pointer;">
+          <h3 style="font-family: 'Orbitron', monospace; margin-bottom: 10px;">💃 Dance Cardio</h3>
+          <p>Fun & Energetic Workout</p>
+          <small>Sat, Sun - 10:00 AM</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nutrition Tracking Section -->
+    <section id="nutrition">
+      <h2>Nutrition Tracker</h2>
+      <div class="nutrition-stats" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+        <div style="background: linear-gradient(45deg, #3498db, #2980b9); color: white; padding: 20px; border-radius: 15px; text-align: center;">
+          <h3 style="font-family: 'Orbitron', monospace; margin-bottom: 5px;">2,150</h3>
+          <p>Daily Calories</p>
+        </div>
+        <div style="background: linear-gradient(45deg, #e74c3c, #c0392b); color: white; padding: 20px; border-radius: 15px; text-align: center;">
+          <h3 style="font-family: 'Orbitron', monospace; margin-bottom: 5px;">85g</h3>
+          <p>Protein Goal</p>
+        </div>
+      </div>
+      <div class="meal-log" style="background: rgba(52, 152, 219, 0.1); padding: 20px; border-radius: 15px; border: 2px dashed #3498db;">
+        <h4 style="text-align: center; color: #2980b9; margin-bottom: 15px; font-family: 'Orbitron', monospace;">📱 Meal Logging</h4>
+        <p style="text-align: center; color: #666; font-style: italic;">Track your daily nutrition intake</p>
+        <div style="text-align: center; margin-top: 15px;">
+          <button style="background: linear-gradient(45deg, #3498db, #2980b9); color: white; border: none; padding: 12px 25px; border-radius: 25px; cursor: pointer; font-weight: 600; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+            Log Today's Meals
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>🏃‍♂️ Your Ultimate Fitness Companion - Train Hard, Stay Strong! 🏃‍♀️</p>
+    <p>Track your workouts, plan your sessions, and achieve your fitness goals with FitTracker Pro.</p>
+  </footer>
+
+  
